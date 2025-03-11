@@ -76,7 +76,8 @@ def scrape_pet(url):
         "Colour": pet_details.get("Colour", "N/A"),
         "Age": pet_details.get("Age", "N/A"),
         "Ref": pet_details.get("Ref", "N/A"),
-        "Distance": pet_details.get("Distance", "")
+        "Distance": pet_details.get("Distance", ""),
+        "URL": url  # ✅ Added URL to the data
     }
     pet_info.update(lifestyle_data)
     return pet_info
@@ -86,7 +87,7 @@ def scrape_pet(url):
 pet_urls = [
     "https://www.rspca.org.uk/findapet/search/details/-/Animal/NINA/ref/BSA2137486/rehome",
     "https://www.rspca.org.uk/findapet/search/details/-/Animal/BILLY/ref/BSA2137315/rehome",
-    "https://www.rspca.org.uk/findapet/search/details/-/Animal/COCO/ref/BSA2137118/rehome",
+    "https://www.rspca.org.uk/findapet/search/details/-/Animal/COCO/ref/BSA2137118/rehome"
     "https://www.rspca.org.uk/findapet/search/details/-/Animal/NINA/ref/BSA2137486/rehome",
     "https://www.rspca.org.uk/findapet/search/details/-/Animal/MEELA/ref/BSA2136787/rehome",
     "https://www.rspca.org.uk/findapet/search/details/-/Animal/HARRY/ref/BSA2137626/rehome",
@@ -128,7 +129,6 @@ pet_urls = [
     "https://www.rspca.org.uk/findapet/search/details/-/Animal/ZEUS/ref/BSA2135894/rehome",
     "https://www.rspca.org.uk/findapet/search/details/-/Animal/MIKA/ref/BSA2135861/rehome",
     "https://www.rspca.org.uk/findapet/search/details/-/Animal/JESSIE/ref/BSA2135823/rehome"
-
 ]
 
 # Scrape each pet's data
@@ -147,7 +147,8 @@ csv_columns = [
     "Dog compatibility",
     "Cat compatibility",
     "Personality trait",
-    "Playfulness"
+    "Playfulness",
+    "URL"  # ✅ Added URL column to CSV
 ]
 
 csv_file = "pet_profile.csv"
