@@ -127,7 +127,8 @@ top_matches = find_best_matches(df, user_preferences)
 # ---- DISPLAY RESULTS ----
 if not top_matches.empty:
     print("\nHere are the top recommended dogs based on your preferences:")
-    print(top_matches[["Breed", "Age_numeric", "Colour_encoded"]])
+    for _, row in top_matches.iterrows():
+        print(f" {row['Animal Name']} - {row['Breed']} ({row['Age_numeric']} years old)")
+        print(f" Profile: {row['URL']}\n")
 else:
     print("No close matches found.")
-

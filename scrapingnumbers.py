@@ -122,6 +122,10 @@ def extract_playfulness_traits(text):
     ], dtype=int)
 df[playfulness_columns] = df["Playfulness"].apply(extract_playfulness_traits)
 
+# ✅ Preserve RSPCA Dog URLs for Matching
+if "URL" in df.columns:
+    df["URL"] = df["URL"]  # Ensure URLs are kept in the final dataset
+
 # Save to CSV
 output_file = "pet_profile_encoded.csv"
 df.to_csv(output_file, index=False)
