@@ -67,7 +67,7 @@ def vectorize_text_tfidf(data):
     print("\nTF-IDF matrix shape:", X_tfidf.shape)
     return X_tfidf
 
-def find_optimal_clusters_db_only(X, min_clusters=30, max_clusters=60, step=1):
+def find_optimal_clusters_db_only(X, min_clusters=30, max_clusters=80, step=1):
     """
     Iterate over different numbers of clusters k (from min_clusters to max_clusters)
     and compute only the Davies-Bouldin Index, then plot the index curve to help choose the optimal k.
@@ -116,7 +116,7 @@ if __name__ == "__main__":
     results, optimal_k = find_optimal_clusters_db_only(
         X_tfidf,
         min_clusters=30,
-        max_clusters=60,
+        max_clusters=80,
         step=1
     )
 
